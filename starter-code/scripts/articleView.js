@@ -77,35 +77,46 @@ articleView.setTeasers = () => {
 // PUT YOUR RESPONSE HERE
 articleView.initNewArticlePage = () => {
   // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
-
+  $('.tab-content').show();
 
   // TODO: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
+  $('export-field').hide();
 
   $('#article-json').on('focus', function(){
     this.select();
   });
 
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
-
+  $('#new-form').on(event,option delegation, callback);
 };
 
 articleView.create = () => {
-  // TODO: Set up a variable to hold the new article we are creating.
+  // TODO: Set up a variable to hold the new article we are creating. see below.
   // Clear out the #articles element, so we can put in the updated preview
-
+  $('#articles').empty();
 
   // TODO: Instantiate an article based on what's in the form fields:
-
+  let article = new Article({
+    title: $('#article-title').val(),
+    author: $('#article-author').val(),
+    authorUrl:
+    title:
+    category:
+    body:
+    publishedOn: $('#article-published:checked').length ? new Date() : null
+  })
 
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
-
+  $('articles').append(article.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $('pre code').each();
+  $('pre code').each(function(i, block) {
 
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  });
 
+  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js: need to oass a parameter into the .val
+  $('#article-json').val();
 };
 
 // COMMENT: Where is this function called? Why?
