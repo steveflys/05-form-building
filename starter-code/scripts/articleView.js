@@ -98,12 +98,11 @@ articleView.create = () => {
 
   // TODO: Instantiate an article based on what's in the form fields:
   let article = new Article({
-    title: $('#article-title').val(),
     author: $('#article-author').val(),
     authorUrl:
-    title:
+    title: $('#article-title').val(),
     category:
-    body:
+    body: $('article-body').val();
     publishedOn: $('#article-published:checked').length ? new Date() : null
   })
 
@@ -112,7 +111,7 @@ articleView.create = () => {
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each(function(i, block) {
-
+    hljs.highlightBlock(block);
   });
 
   // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js: need to oass a parameter into the .val
